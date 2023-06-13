@@ -10,7 +10,7 @@
   </head>
   <body>
     <a href="index.html" id="inicio">Inicio</a>
-    <form action="" class="formulario">
+    <form action="" class="formulario" onsubmit="return validarFormulario(event)">
       <h1>Iniciar Sesion</h1>
       <div class="contenedor">
         <div class="input-contenedor">
@@ -24,7 +24,7 @@
         </div>
   
         <div>
-          <input type="submit" value="Iniciar Sesion" class="button" onclick="iniciarSesion(event)">
+          <input type="submit" value="Iniciar Sesion" class="button">
           <p>Al registrate, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
           <p>¿No tienes Cuenta? <a href="crear-usuario.html" class="link">Registrate</a></p>
         </div>

@@ -11,7 +11,7 @@
 <body>
   <a href="index.html" id="inicio">Inicio</a>
 
-  <form action="" class="formulario">
+  <form action="" class="formulario" onsubmit="return validarFormulario(event)">
     <h1>Registrate</h1>
     <div class="contenedor">
       <div class="input-contenedor">
@@ -35,7 +35,7 @@
       </div>
 
       <div>
-        <input type="submit" value="Registrate" class="button" onclick="guardarRegistro(event)">
+        <input type="submit" value="Registrate" class="button" >
         <p>Al registrate, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
         <p>¿Ya tienes una cuenta? <a href="inicio-sesion.html" class="link">Inicia Sesión</a></p>
       </div>

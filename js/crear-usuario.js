@@ -1,3 +1,19 @@
+function validarFormulario(event) {
+  var nombresInput = document.getElementById("nombres-input");
+  var apellidosInput = document.getElementById("apellidos-input");
+  var correoInput = document.getElementById("correo-input");
+  var contrasenaInput = document.getElementById("contrasena-input");
+
+  if (nombresInput.value.trim() === '' || apellidosInput.value.trim() === '' || correoInput.value.trim() === '' || contrasenaInput.value.trim() === '') {
+    event.preventDefault(); // Evita que se envíe el formulario
+    alert('Por favor, complete todos los campos.');
+    return false;
+  }
+
+  return guardarRegistro(event);
+}
+
+
 function guardarRegistro(event) {
   event.preventDefault(); // Evita que se envíe el formulario
 

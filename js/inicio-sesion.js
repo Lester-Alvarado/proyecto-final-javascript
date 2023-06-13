@@ -1,3 +1,17 @@
+function validarFormulario(event) {
+  var correoInput = document.getElementById("correo-input");
+  var contrasenaInput = document.getElementById("contrasena-input");
+
+  if (correoInput.value.trim() === '' || contrasenaInput.value.trim() === '') {
+    event.preventDefault(); // Evita que se envíe el formulario
+    alert('Por favor, complete todos los campos.');
+    return false;
+  }
+
+  return iniciarSesion(event);
+}
+
+
 function iniciarSesion(event) {
   event.preventDefault(); // Evita que se envíe el formulario
 
