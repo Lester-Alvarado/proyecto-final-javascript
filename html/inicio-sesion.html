@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="../css/crear-usuario.css">
+    <script src="https://kit.fontawesome.com/66984d58a6.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <a href="index.html" id="inicio">Inicio</a>
+    <form action="" class="formulario">
+      <h1>Iniciar Sesion</h1>
+      <div class="contenedor">
+        <div class="input-contenedor">
+        <i class="fa-solid fa-envelope icon"></i>
+        <input type="text" placeholder="Correo Electronico" id="correo-input">  
+        </div>
+  
+        <div class="input-contenedor">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" placeholder="Contraseña" id="contrasena-input">  
+        </div>
+  
+        <div>
+          <input type="submit" value="Iniciar Sesion" class="button" onclick="iniciarSesion(event)">
+          <p>Al registrate, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+          <p>¿No tienes Cuenta? <a href="crear-usuario.html" class="link">Registrate</a></p>
+        </div>
+  
+      </div>
+  
+    </form>
+    <script src="../js/inicio-sesion.js"></script>
+  </body>
+</html>
