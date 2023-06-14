@@ -2,9 +2,9 @@ const boton = document.getElementById("cerrar-sesion-btn")
 boton.addEventListener("click", cerrarSesion);
 var registros = JSON.parse(localStorage.getItem("registros"));
 
-var correo = window.opener.document.getElementById("correo-input")
-var valorInput = correo.value;
-console.log(valorInput)
+// var correo = window.opener.document.getElementById("correo-input")
+// var valorInput = correo.value;
+// console.log(valorInput)
 
 // var registroEncontrado = registros.find(function (registro) {
 //   return registro.correo === correo;
