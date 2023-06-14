@@ -26,17 +26,22 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 0.2rem;
+  
 }
 
 #cerrar-sesion-btn {
   border: none;
   width: max-content;
   color: var(--white);
-  font-size: 20px;
+  font-size: 15px;
   background: var(--blue);
-  padding: 15px 20px;
   border-radius: 10px;
   cursor: pointer;
+
+
+  padding: 10px;
+
+  
 }
 
 #cerrar-sesion-btn:hover {
@@ -72,12 +77,12 @@ body {
 .agregar-tarea {
   background-color: var(--white);
   border-radius: 15px;
-  height: 70px;
+  height: 50px;
   display: flex;
   align-items: center;
   gap: 70px;
   padding: 10px;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .agregar-tarea input {
@@ -87,6 +92,7 @@ body {
   border: none;
   background-color: var(--white);
   padding-left: 10px;
+  font-size: 1.1rem;
 }
 .agregar-tarea input::placeholder {
   font-size: 1.1rem;
@@ -94,7 +100,7 @@ body {
 }
 
 .agregar-tarea i {
-  font-size: 50px;
+  font-size: 40px;
   color: var(--purple);
 }
 .agregar-tarea i:hover {
@@ -140,4 +146,14 @@ body {
 .line-through {
   text-decoration: line-through;
   color: var(--blue-light);
+}
+
+
+#ultimos{
+  display: flex;
+
+}
+
+.edit{
+  margin-right: 10px;
 }
