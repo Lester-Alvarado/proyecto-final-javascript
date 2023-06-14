@@ -2,6 +2,7 @@
 @import url("https://fonts.cdnfonts.com/css/helvetica-2");
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
   margin: 0;
@@ -26,8 +27,7 @@
 }
 
 header {
-  background-color: #18263b;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   border: 0;
@@ -35,47 +35,77 @@ header {
 }
 
 #imagen {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   padding-right: 20px;
 }
 
 a {
   display: flex;
   align-items: center;
-  font-weight: 800;
   text-decoration: none;
-  color: aliceblue;
   
+}
+
+a#nombre{
+  color: aliceblue;
+  font-weight: 800;
 
 }
+
 #nombre{
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Pacifico', cursive;
 }
 
+#botones{
+  margin-right: 30px;
+}
 
-button {
+
+a#inicio{
+  color: #2e518b;
+}
+
+.btn-1  {
+  cursor: pointer;
+  margin-left: 10px;
+  height: max-content;
+  border: 1px solid white; 
+  padding: 10px;
+  color: white;
+  letter-spacing: 2px;
+  background-color: white; 
+  font-family: "Helvetica", sans-serif;
+  border-radius: 50px;
+}
+
+a#registro{
+  color: white;
+}
+
+.btn-2 {
   cursor: pointer;
   margin-left: 10px;
   height: max-content;
   border: 1px solid #2e518b; 
   padding: 10px;
   background-color: #2e518b; 
-  text-transform: uppercase;
-  font-family: "Helvetica", sans-serif;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
   border-radius: 50px;
 }
 
-h1 {
-  margin-top: 4rem;
+#miTextoAnimado {
+  margin-top: 1rem;
   font-size: 4rem;
   font-family: 'Righteous', cursive;
   background-color: none;
   height: 100px;
   width: 400px;
-  padding: 1rem;
-  margin-left: 70rem;
+  margin-left: 50rem;
   display: flex;
   color: white;
 }
@@ -83,6 +113,7 @@ h1 {
 button:hover{
   background: cadetblue;
   cursor: pointer;
+  border: 1px solid cadetblue;
 }
 
 @media(max-width:768px){
