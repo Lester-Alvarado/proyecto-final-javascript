@@ -10,6 +10,7 @@
   --blue-light: #04d4c3;
   --blue-dark: #2a73c2;
   --green: #2c7b90;
+  --blue: #1a2537;
 }
 
 body {
@@ -30,9 +31,9 @@ body {
 #cerrar-sesion-btn {
   border: none;
   width: max-content;
-  color: white;
+  color: var(--white);
   font-size: 20px;
-  background: #1a2537;
+  background: var(--blue);
   padding: 15px 20px;
   border-radius: 10px;
   cursor: pointer;
@@ -44,14 +45,15 @@ body {
 
 .container {
   max-width: 80%;
-  width: 400px;
-  height: 600px;
+  width: 800px;
+  height: 700px;
   margin: 0 auto;
 }
 
 /*PERFIL*/
 
 .perfil h1 {
+    font-size: 40px;
   color: var(--white);
 }
 
@@ -105,6 +107,9 @@ body {
 .seccion-tarea h3 {
   color: var(--white);
   margin-bottom: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .seccion-tarea li {
@@ -119,6 +124,8 @@ body {
 }
 .seccion-tarea i {
   font-size: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .seccion-tarea > ul p {
