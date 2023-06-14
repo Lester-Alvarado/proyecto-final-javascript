@@ -118,7 +118,7 @@ function tareaEliminada(element){
 
 botonEnter.addEventListener('click', ()=> {
     const tarea = input.value
-    const correo = localStorage.getItem("correo")
+    const correo = localStorage.getItem("correo");
     if(tarea){
         agregarTarea(tarea,id,false,false, correo)
         LIST.push({
@@ -190,7 +190,9 @@ if(data){
 
 
 function cargarLista(array) {
-    array.forEach(function(item){
-        agregarTarea(item.nombre,item.id,item.realizado,item.eliminado)
-    })
+    array.forEach(function(item) {
+      if (item.correo === correoApertura) { // Verificar si la tarea pertenece al correo de inicio de sesión
+        agregarTarea(item.nombre, item.id, item.realizado, item.eliminado);
+    }
+    });
 }
