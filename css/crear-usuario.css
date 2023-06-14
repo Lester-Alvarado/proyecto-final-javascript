@@ -97,4 +97,10 @@ p{
   text-align: center;
   background-color: #1a2537;
   color: white;
+  border-radius: 5px;
+
+}
+
+#inicio:hover{
+  background: cadetblue;
 }
