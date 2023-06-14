@@ -20,10 +20,15 @@ body{
   padding: 15px;
 }
 
-.formulario{
+.formulario, .formulario-2{
   background: #fff;
   margin-top: 100px;
   padding: 3px;
+  
+}
+.formulario{
+  margin-top: 50px;
+  
 }
 
 h1{
@@ -80,6 +85,12 @@ p{
 
 @media(min-width:768px){
   .formulario{
+    margin: auto;
+    width: 500px;
+    margin-top: 30px;
+    border-radius: 7px;
+  }
+  .formulario-2{
     margin: auto;
     width: 500px;
     margin-top: 100px;
