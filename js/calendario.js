@@ -10,7 +10,7 @@ function cerrarSesion(){
     window.location.href = "../html/inicio-sesion.html";
 }
 
-// codigo para poner 
+// codigo para poner nombre y bienvenida 
 var correoApertura = localStorage.getItem("correo")
 var usuarioEncontrado = registros.find(function (registro) {
     return registro.correo === correoApertura;
