@@ -59,13 +59,16 @@ function agregarTarea( tarea,id,realizado,eliminado) {
     const LINE = realizado ? lineThrough : '' 
 
     const elemento = `
-    <li id="elemento-${id}">
-      <i class="far ${REALIZADO}" data="realizado" id="${id}"></i>
-      <p class="text ${LINE}">${tarea}</p>
-      <i class="fas fa-edit edit" data="editar" id="${id}" onclick="editarTarea(${id})"></i> 
-      <i class="fas fa-trash de" data="eliminado" id="${id}"></i> 
+        <li id="elemento-${id}">
+        <i class="far ${REALIZADO}" data="realizado" id="${id}"></i>
+        <p class="text ${LINE}">${tarea}</p>
+        <div id="ultimos">
+        <i class="fa-sharp fa-solid fa-pencil"></i>
+        <i class="fas fa-edit edit" data="editar" id="${id}" onclick="editarTarea(${id})"></i> 
+        <i class="fas fa-trash de" data="eliminado" id="${id}" ></i> 
+        <div>
     </li>
-  `;
+    `;
     lista.insertAdjacentHTML("beforeend",elemento)
 
 }
@@ -74,21 +77,21 @@ function editarTarea(id) {
     const tareaElemento = document.querySelector(`#elemento-${id} .text`);
     const tareaTexto = tareaElemento.textContent;
     tareaElemento.innerHTML = `
-      <input type="text" class="edit-input" value="${tareaTexto}" onkeyup="guardarEdicion(event, ${id})" autofocus>
+    <input type="text" class="edit-input" value="${tareaTexto}" onkeyup="guardarEdicion(event, ${id})" autofocus>
     `;
-  }
-  
-  function guardarEdicion(event, id) {
+}
+
+function guardarEdicion(event, id) {
     if (event.key === 'Enter') {
-      const tareaElemento = document.querySelector(`#elemento-${id} .text`);
-      const nuevaTarea = event.target.value;
-      tareaElemento.textContent = nuevaTarea;
+        const tareaElemento = document.querySelector(`#elemento-${id} .text`);
+        const nuevaTarea = event.target.value;
+        tareaElemento.textContent = nuevaTarea;
       // Actualizar la tarea en el arreglo LIST
-      LIST[id].nombre = nuevaTarea;
-      localStorage.setItem('TODO', JSON.stringify(LIST));
+        LIST[id].nombre = nuevaTarea;
+        localStorage.setItem('TODO', JSON.stringify(LIST));
     }
-  }
-  
+}
+
 
 // funcion de Tarea Realizada 
 
@@ -105,7 +108,7 @@ function tareaRealizada(element) {
 function tareaEliminada(element){
    // console.log(element.parentNode)
    // console.log(element.parentNode.parentNode)
-    element.parentNode.parentNode.removeChild(element.parentNode)
+    element.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode)
     LIST[element.id].eliminado = true
     console.log(LIST)
 }
