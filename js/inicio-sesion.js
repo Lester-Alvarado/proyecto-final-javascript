@@ -17,7 +17,11 @@ function iniciarSesion(event) {
 
   var correo = document.getElementById("correo-input").value;
   var contrasena = document.getElementById("contrasena-input").value;
-  
+
+  //encontrar los input para dejarlos con un valor vacio si hay un alert
+  var correoInput = document.getElementById("correo-input");
+  var contrasenaInput = document.getElementById("contrasena-input");
+
   // Comprobamos si el navegador es compatible con localStorage
   if (typeof localStorage !== "undefined") {
     // Obtenemos los registros existentes del Local Storage
@@ -36,9 +40,13 @@ function iniciarSesion(event) {
         alert("Inicio de sesión exitoso");
       } else {
         alert("Correo o contraseña incorrectos");
+        correoInput.value = '';
+        contrasenaInput.value = ''
       }
     } else {
       alert("No hay registros de usuarios almacenados");
+      correoInput.value = '';
+      contrasenaInput.value = ''
     }
   } else {
     console.log("Lo siento, tu navegador no soporta localStorage.");
