@@ -1,7 +1,8 @@
-if (typeof(Storage) != 'undefined'){
-  console.log(Storage);
-  // localStorage.clear
+const miTextoAnimado = document.getElementById("miTextoAnimado");
 
-}else{
-  alert("Storage no es compatible en el navegador");
-}
+// Mi animacion
+new TypeIt(miTextoAnimado, {
+  strings: ["¡Hola!", "Bienvenido a tu portal de tareas"],
+  speed: 75,
+  loop: true,
+}).go();
