@@ -22,30 +22,49 @@ function guardarRegistro(event) {
   var correo = document.getElementById("correo-input").value;
   var contrasena = document.getElementById("contrasena-input").value;
 
-  var registro = {
-    nombres: nombres,
-    apellidos: apellidos,
-    correo: correo,
-    contrasena: contrasena
-  };
+  // Función para verificar la fortaleza de la contraseña
+  function verificarContrasena(contrasena) {
+    // Expresión regular para verificar la fortaleza de la contraseña
+    var patron = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
-  // Comprobamos si el navegador es compatible con localStorage
-  if (typeof localStorage !== "undefined") {
-    // Obtenemos los registros existentes o inicializamos una lista vacía
-    var registros = JSON.parse(localStorage.getItem("registros")) || [];
+    if (patron.test(contrasena)) {
+      return true; // La contraseña cumple con los requisitos
+    } else {
+      return false; // La contraseña no cumple con los requisitos
+    }
+  }
+  
+  if (verificarContrasena(contrasena)) {
+    alert("Contraseña válida. Usuario creado con éxito.");
+    var registro = {
+      nombres: nombres,
+      apellidos: apellidos,
+      correo: correo,
+      contrasena: contrasena,
+    };
 
-    // Agregamos el nuevo registro a la lista de registros
-    registros.push(registro);
+    // Comprobamos si el navegador es compatible con localStorage
+    if (typeof localStorage !== "undefined") {
+      // Obtenemos los registros existentes o inicializamos una lista vacía
+      var registros = JSON.parse(localStorage.getItem("registros")) || [];
 
-    // Guardamos la lista actualizada en localStorage
-    localStorage.setItem("registros", JSON.stringify(registros));
+      // Agregamos el nuevo registro a la lista de registros
+      registros.push(registro);
 
-    // Redireccionar a otra página después de guardar el registro
-    window.location.href = "../html/index.html";
+      // Guardamos la lista actualizada en localStorage
+      localStorage.setItem("registros", JSON.stringify(registros));
 
-    alert("Tu usuario fue creado Exitosamente puedes Iniciar Sesion");
+      // Redireccionar a otra página después de guardar el registro
+      window.location.href = "../html/index.html";
+
+      alert("Tu usuario fue creado Exitosamente puedes Iniciar Sesion");
+    } else {
+      console.log("Lo siento, tu navegador no soporta localStorage.");
+    }
   } else {
-    console.log("Lo siento, tu navegador no soporta localStorage.");
+    alert(
+      "Contraseña inválida. La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
+    );
   }
 }
 
